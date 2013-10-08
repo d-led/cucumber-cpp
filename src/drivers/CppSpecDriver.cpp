@@ -1,6 +1,6 @@
 #include <cucumber-cpp/internal/drivers/CppSpecDriver.hpp>
 
-#include <CppSpec/CppSpec.h>
+#include <CppSpec.h>
 
 namespace cucumber {
 namespace internal {
