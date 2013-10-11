@@ -9,13 +9,7 @@
 #define CUKE_OBJECT_PREFIX CukeObject
 #endif
 
-#ifdef __COUNTER__
-#define CUKE_GEN_OBJECT_NAME_ BOOST_JOIN(CUKE_OBJECT_PREFIX, __COUNTER__)
-#else
-// Use a counter to be incremented every time cucumber-cpp is included
-// in case this does not suffice (possible with multiple files only)
-#define CUKE_GEN_OBJECT_NAME_ BOOST_JOIN(CUKE_OBJECT_PREFIX, __LINE__)
-#endif
+#define CUKE_GEN_OBJECT_NAME_ BOOST_JOIN(BOOST_JOIN(CUKE_OBJECT_PREFIX, __COUNTER__), __LINE__)
 
 // ************************************************************************** //
 // **************                 CUKE OBJECTS                 ************** //
