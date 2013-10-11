@@ -1,4 +1,4 @@
-#include <CppSpec/CppSpec.h>
+#include <CppSpec.h>
 #include <cucumber-cpp/defs.hpp>
 
 #include <Calculator.h>
