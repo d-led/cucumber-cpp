@@ -18,6 +18,9 @@ std::stringstream afterAroundStepHookCallMarker;
 std::stringstream afterStepHookCallMarker;
 std::stringstream afterHookCallMarker;
 std::stringstream globalStepHookCallMarker;
+std::stringstream beforeAllHookCallMarker;
+std::stringstream afterAllHookCallMarker;
+std::string contextContents;
 
 void clearHookCallMarkers() {
     beforeHookCallMarker.str("");
@@ -26,13 +29,18 @@ void clearHookCallMarkers() {
     afterStepHookCallMarker.str("");
     afterHookCallMarker.str("");
     globalStepHookCallMarker.str("");
+    beforeAllHookCallMarker.str("");
+    afterAllHookCallMarker.str("");
+    contextContents.clear();
 }
 
 std::string getHookCallMarkers() {
-   return beforeHookCallMarker.str() +
+   return beforeAllHookCallMarker.str() +
+           beforeHookCallMarker.str() +
            beforeAroundStepHookCallMarker.str() +
            afterStepHookCallMarker.str() +
-           afterHookCallMarker.str();
+           afterHookCallMarker.str() +
+           afterAllHookCallMarker.str();
 }
 
 class EmptyCallableStep : public CallableStep {
